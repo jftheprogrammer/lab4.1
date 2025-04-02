@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India_0528: The Shadow Cipher</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #1a1a1a;
+            color: #00ffcc;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            line-height: 1.8;
+        }
+        h1 {
+            text-align: center;
+            color: #ff007a;
+            text-shadow: 0 0 10px #ff007a;
+            margin-bottom: 40px;
+        }
+        .container {
+            border: 2px dashed #00ffcc;
+            padding: 25px;
+            background-color: #2a2a2a;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+        }
+        .ciphertext {
+            background-color: #333333;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .hint {
+            font-style: italic;
+            color: #66ff99;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .hint-warning {
+            color: #ffcc00;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+        }
+        form {
+            margin-top: 30px;
+        }
+        label {
+            color: #ffcc00;
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            background-color: #333333;
+            color: #00ffcc;
+            border: 1px solid #00ffcc;
+            padding: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        button {
+            background-color: #ff007a;
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+        button:hover {
+            background-color: #ff3399;
+        }
+        #hintButton {
+            background-color: #ff6600;
+        }
+        #hintButton:hover {
+            background-color: #ff8833;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #999999;
+        }
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2a2a2a;
+            color: #00ffcc;
+            padding: 20px;
+            border: 2px solid #ff007a;
+            box-shadow: 0 0 20px rgba(255, 0, 122, 0.5);
+            text-align: center;
+            z-index: 1000;
+        }
+        .popup button {
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>India_0528: The Shadow Cipher</h1>
+    <div class="container">
+        <p>Shadows cloak the path ahead, a cipher woven in twilight’s thread.</p>
+        <p>Unlock the message to find thy way:</p>
+        <div class="ciphertext">
+            NSLYXSCIYS
+        </div>
+        <p class="hint">Hint: The key is ‘KEY’. Unravel with Vigenère’s art.</p>
+        <p class="hint-warning">Dost thou crave the shadow’s lore? Five points shall dim. Seek Farro’s wisdom, vast as yore.</p>
+        <button id="hintButton">Request Hint (-5 points)</button>
+        <form id="cipherForm">
+            <label for="path">Enter the decrypted word:</label>
+            <input type="text" id="path" name="path">
+            <button type="submit">Proceed</button>
+        </form>
+    </div>
+    <div id="popup" class="popup">
+        <p>The shadows yield. Proceed to the final realm.</p>
+        <button onclick="proceedToNext()">Continue</button>
+    </div>
+    <div class="footer">
+        <p>-farro-from-india</p>
+    </div>
+    <script>
+        document.getElementById('hintButton').addEventListener('click', function() {
+            alert("Seek Farro in the flesh to claim thy hint. Five points shall be lost, as foretold.");
+        });
+
+        document.getElementById('cipherForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const answer = document.getElementById('path').value.trim();
+            if (answer === "doNotUseAI") {
+                document.getElementById('popup').style.display = 'block';
+            } else {
+                alert("Incorrect. Decrypt the cipher with the given key.");
+            }
+        });
+
+        function proceedToNext() {
+            window.location.href = "final_realm.html";
+        }
+    </script>
+</body>
+</html>

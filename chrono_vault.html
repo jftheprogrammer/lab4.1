@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India_0528: The Chrono Vault</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #1a1a1a;
+            color: #00ffcc;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            line-height: 1.8;
+        }
+        h1 {
+            text-align: center;
+            color: #ff007a;
+            text-shadow: 0 0 10px #ff007a;
+            margin-bottom: 40px;
+        }
+        .container {
+            border: 2px dashed #00ffcc;
+            padding: 25px;
+            background-color: #2a2a2a;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+        }
+        .timestamp {
+            background-color: #333333;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .hint {
+            font-style: italic;
+            color: #66ff99;
+            margin: 20px 0;
+            text-align: center;
+        }
+        .hint-warning {
+            color: #ffcc00;
+            font-weight: bold;
+            margin: 20px 0;
+            text-align: center;
+        }
+        form {
+            margin-top: 30px;
+        }
+        label {
+            color: #ffcc00;
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            background-color: #333333;
+            color: #00ffcc;
+            border: 1px solid #00ffcc;
+            padding: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        button {
+            background-color: #ff007a;
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+        button:hover {
+            background-color: #ff3399;
+        }
+        #hintButton {
+            background-color: #ff6600;
+        }
+        #hintButton:hover {
+            background-color: #ff8833;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+    <h1>India_0528: The Chrono Vault</h1>
+    <div class="container">
+        <p>The vault is locked in time, its secrets bound to a moment in the continuum.</p>
+        <p>Decode the temporal key to access the next chamber:</p>
+        <div class="timestamp">
+            1714521600
+        </div>
+        <p class="hint">Hint: Shift forward by 28 hours from the Unix epoch, then format as YYYY-MM-DD-HH (24-hour UTC).</p>
+        <p class="hint-warning">Dost thou seek a whisper from the void? Five points shall fade. To Farro’s ear, thy plea must wade.</p>
+        <button id="hintButton">Request Hint (-5 points)</button>
+        <form id="chronoForm">
+            <label for="key">Enter the temporal key:</label>
+            <input type="text" id="key" name="key">
+            <button type="submit">Unlock</button>
+        </form>
+    </div>
+    <div class="footer">
+        <p>-farro-from-india</p>
+    </div>
+    <script>
+        document.getElementById('hintButton').addEventListener('click', function() {
+            alert("Seek Farro in the flesh to claim thy hint. Five points shall be lost, as thou hast been warned.");
+        });
+
+        document.getElementById('chronoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const answer = document.getElementById('key').value.trim();
+            if (answer === "2025-05-02-04") {
+                window.location.href = "shadow_cipher.html";
+            } else {
+                alert("Incorrect. Adjust the timestamp and format it correctly.");
+            }
+        });
+    </script>
+</body>
+</html>

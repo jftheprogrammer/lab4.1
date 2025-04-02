@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India_0528: The True Abyss</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #1a1a1a;
+            color: #00ffcc;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            line-height: 1.8;
+        }
+        h1 {
+            text-align: center;
+            color: #ff007a;
+            text-shadow: 0 0 10px #ff007a;
+            margin-bottom: 40px;
+        }
+        .container {
+            border: 2px dashed #00ffcc;
+            padding: 25px;
+            background-color: #2a2a2a;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+        }
+        .ciphertext {
+            background-color: #333333;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .images {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .images img {
+            width: 150px;
+            margin: 10px;
+            border: 1px solid #00ffcc;
+        }
+        .hint {
+            font-style: italic;
+            color: #66ff99;
+            margin: 20px 0;
+            text-align: center;
+        }
+        form {
+            margin-top: 30px;
+            text-align: center;
+        }
+        label {
+            color: #ffcc00;
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            background-color: #333333;
+            color: #00ffcc;
+            border: 1px solid #00ffcc;
+            padding: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        button {
+            background-color: #ff007a;
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+        button:hover {
+            background-color: #ff3399;
+        }
+        #victors {
+            margin-top: 40px;
+            background-color: #333333;
+            padding: 15px;
+            display: none;
+        }
+        #victorsList {
+            list-style: none;
+            padding: 0;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+    <h1>India_0528: The True Abyss</h1>
+    <div class="container">
+        <p>The abyss gazes back, its secrets locked in layers of shadow.</p>
+        <p>Decipher the message and unearth the key within the visions:</p>
+        <div class="ciphertext">
+            QEB ZFMEBO FP QEB XKRQEBKQFDXQFLK
+        </div>
+        <div class="images">
+            <img src="image1.jpg" alt="Vision 1">
+            <img src="image2.jpg" alt="Vision 2">
+            <img src="image3.jpg" alt="Vision 3">
+        </div>
+        <p class="hint">Hint: Caesar’s shift aligns with the number of visions. Look beyond the surface of one.</p>
+        <form id="abyssForm">
+            <label for="message">Decrypted Message:</label>
+            <input type="text" id="message" name="message">
+            <button type="submit">Test Message</button>
+        </form>
+        <form id="keyForm" style="display: none;">
+            <label for="key">Hidden Key:</label>
+            <input type="text" id="key" name="key">
+            <button type="submit">Unlock</button>
+        </form>
+        <form id="nameForm" style="display: none;">
+            <label for="name">Enter Your Name:</label>
+            <input type="text" id="name" name="name">
+            <button type="submit">Claim Victory</button>
+        </form>
+        <div id="victors">
+            <h2>Victors of the Abyss</h2>
+            <ul id="victorsList"></ul>
+        </div>
+    </div>
+    <div class="footer">
+        <p>-farro-from-india</p>
+    </div>
+    <script>
+        const correctMessage = "THE CIPHER IS THE AUTHENTICATION";
+        const correctKey = "enigma528"; // Hidden in image2.jpg via steganography
+
+        // Load victors from localStorage
+        let victors = JSON.parse(localStorage.getItem('victors')) || [];
+        updateVictorsList();
+
+        // Step 1: Check decrypted message
+        document.getElementById('abyssForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const message = document.getElementById('message').value.trim().toUpperCase();
+            if (message === correctMessage) {
+                document.getElementById('abyssForm').style.display = 'none';
+                document.getElementById('keyForm').style.display = 'block';
+            } else {
+                alert("Incorrect. Shift the cipher correctly.");
+            }
+        });
+
+        // Step 2: Check hidden key
+        document.getElementById('keyForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const key = document.getElementById('key').value.trim();
+            if (key === correctKey) {
+                document.getElementById('keyForm').style.display = 'none';
+                document.getElementById('nameForm').style.display = 'block';
+                document.getElementById('victors').style.display = 'block';
+            } else {
+                alert("Incorrect. The key lies hidden in one vision.");
+            }
+        });
+
+        // Step 3: Submit name
+        document.getElementById('nameForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            if (name) {
+                victors.push(name);
+                localStorage.setItem('victors', JSON.stringify(victors));
+                updateVictorsList();
+                document.getElementById('name').value = '';
+                alert("Victory claimed! Your name is etched in the abyss.");
+            }
+        });
+
+        function updateVictorsList() {
+            const list = document.getElementById('victorsList');
+            list.innerHTML = '';
+            victors.forEach(victor => {
+                const li = document.createElement('li');
+                li.textContent = victor;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+</html>

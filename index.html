@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>India_0528: The Numeric Ruins</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background-color: #1a1a1a;
+            color: #00ffcc;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 30px;
+            line-height: 1.8;
+        }
+        h1 {
+            text-align: center;
+            color: #ff007a;
+            text-shadow: 0 0 10px #ff007a;
+            margin-bottom: 40px;
+        }
+        .container {
+            border: 2px dashed #00ffcc;
+            padding: 25px;
+            background-color: #2a2a2a;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.3);
+        }
+        .puzzle {
+            background-color: #333333;
+            padding: 15px;
+            margin: 20px 0;
+            word-break: break-all;
+        }
+        .hint {
+            font-style: italic;
+            color: #66ff99;
+            margin: 20px 0;
+            text-align: center;
+        }
+        form {
+            margin-top: 30px;
+        }
+        label {
+            color: #ffcc00;
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            background-color: #333333;
+            color: #00ffcc;
+            border: 1px solid #00ffcc;
+            padding: 5px;
+            font-family: 'Courier New', monospace;
+        }
+        button {
+            background-color: #ff007a;
+            color: #ffffff;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-family: 'Courier New', monospace;
+        }
+        button:hover {
+            background-color: #ff3399;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #999999;
+        }
+    </style>
+</head>
+<body>
+    <h1>India_0528: The Numeric Ruins</h1>
+    <div class="container">
+        <p>The ruins hum with ancient digits, a code woven across number systems.</p>
+        <p>Decipher the sequence to unearth the next pathway:</p>
+        <div class="puzzle">
+            101111 (base 2)<br>
+            63 (base 16)<br>
+            150 (base 8)<br>
+            114 (base 10)<br>
+            1101111 (base 2)<br>
+            6E (base 16)<br>
+            157 (base 8)<br>
+            95 (base 10)<br>
+            1110110 (base 2)<br>
+            61 (base 16)<br>
+            165 (base 8)<br>
+            108 (base 10)<br>
+            1110100 (base 2)
+        </div>
+        <p class="hint">Hint: Align the numbers to a common base and listen to their ASCII whispers.</p>
+        <form id="numericForm">
+            <label for="pathway">Enter the decoded pathway:</label>
+            <input type="text" id="pathway" name="pathway">
+            <button type="submit">Proceed</button>
+        </form>
+    </div>
+    <div class="footer">
+        <p>-farro-from-india</p>
+    </div>
+    <script>
+        document.getElementById('numericForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const answer = document.getElementById('pathway').value.trim();
+            if (answer === "/chrono_vault.html") {
+                window.location.href = "chrono_vault.html";
+            } else {
+                alert("Incorrect. Convert the numbers and decode the message.");
+            }
+        });
+    </script>
+</body>
+</html>
