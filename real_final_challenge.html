@@ -33,14 +33,17 @@
             text-align: center;
             font-size: 1.2em;
         }
-        .images {
+        .media {
             margin: 20px 0;
             text-align: center;
         }
-        .images img {
+        .media img {
             width: 150px;
             margin: 10px;
             border: 1px solid #00ffcc;
+        }
+        .media audio {
+            margin: 10px;
         }
         .hint {
             font-style: italic;
@@ -96,16 +99,18 @@
     <h1>India_0528: The True Abyss</h1>
     <div class="container">
         <p>The abyss gazes back, its secrets locked in layers of shadow.</p>
-        <p>Decipher the message and unearth the key within the visions:</p>
+        <p>Decipher the message and unearth the key within the echoes and visions:</p>
         <div class="ciphertext">
             iduruxirupxLqglgd
         </div>
-        <div class="images">
-            <img src="image1.jpg" alt="Vision 1">
-            <img src="image2.jpg" alt="Vision 2">
-            <img src="image3.jpg" alt="Vision 3">
+        <div class="media">
+            <audio controls>
+                <source src="files/audio.wav" type="audio/wav">
+                Your browser does not support the audio element.
+            </audio>
+            <img src="files/image2.jpg" alt="Vision">
         </div>
-        <p class="hint">Hint: Caesar’s shift aligns with the number of visions. Look beyond the surface of one.</p>
+        <p class="hint">Hint: Caesar’s shift is thrice the whispers of the void. Look beyond the surface of the vision.</p>
         <form id="abyssForm">
             <label for="message">Decrypted Message:</label>
             <input type="text" id="message" name="message">
@@ -116,9 +121,7 @@
             <input type="text" id="key" name="key">
             <button type="submit">Unlock</button>
         </form>
-        <formව
-
-form id="nameForm" style="display: none;">
+        <form id="nameForm" style="display: none;">
             <label for="name">Enter Your Name:</label>
             <input type="text" id="name" name="name">
             <button type="submit">Claim Victory</button>
@@ -133,7 +136,7 @@ form id="nameForm" style="display: none;">
     </div>
     <script>
         const correctMessage = "farroxfromxIndia";
-        const correctKey = "pneumonoultramicroscopicsilicovolcanoconiosis"; // Hidden in image2.jpg via steganography
+        const correctKey = "pneumonoultramicroscopicsilicovolcanoconiosis"; // Hidden in files/image2.jpg via steganography
 
         // Load victors from localStorage
         let victors = JSON.parse(localStorage.getItem('victors')) || [];
@@ -160,7 +163,7 @@ form id="nameForm" style="display: none;">
                 document.getElementById('nameForm').style.display = 'block';
                 document.getElementById('victors').style.display = 'block';
             } else {
-                alert("Incorrect. The key lies hidden in one vision.");
+                alert("Incorrect. The key lies hidden in the vision.");
             }
         });
 
