@@ -38,12 +38,19 @@
             text-align: center;
         }
         .media img {
-            width: 150px;
-            margin: 10px;
+            max-width: 100%; /* Scales down if container is narrower than 612px */
+            height: auto; /* Maintains aspect ratio (612x523) */
+            margin: 15px 0; /* Increased margin for spacing */
             border: 1px solid #00ffcc;
+            display: block; /* Ensures proper centering */
+            margin-left: auto;
+            margin-right: auto;
         }
         .media audio {
-            margin: 10px;
+            margin: 15px 0; /* Consistent spacing with image */
+            display: block; /* Centers audio player */
+            margin-left: auto;
+            margin-right: auto;
         }
         .hint {
             font-style: italic;
