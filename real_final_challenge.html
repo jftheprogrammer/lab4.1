@@ -98,7 +98,7 @@
         <p>The abyss gazes back, its secrets locked in layers of shadow.</p>
         <p>Decipher the message and unearth the key within the visions:</p>
         <div class="ciphertext">
-            QEB ZFMEBO FP QEB XKRQEBKQFDXQFLK
+            iduruxirupxLqglgd
         </div>
         <div class="images">
             <img src="image1.jpg" alt="Vision 1">
@@ -116,7 +116,9 @@
             <input type="text" id="key" name="key">
             <button type="submit">Unlock</button>
         </form>
-        <form id="nameForm" style="display: none;">
+        <formව
+
+form id="nameForm" style="display: none;">
             <label for="name">Enter Your Name:</label>
             <input type="text" id="name" name="name">
             <button type="submit">Claim Victory</button>
@@ -130,8 +132,8 @@
         <p>-farro-from-india</p>
     </div>
     <script>
-        const correctMessage = "THE CIPHER IS THE AUTHENTICATION";
-        const correctKey = "enigma528"; // Hidden in image2.jpg via steganography
+        const correctMessage = "farroxfromxIndia";
+        const correctKey = "pneumonoultramicroscopicsilicovolcanoconiosis"; // Hidden in image2.jpg via steganography
 
         // Load victors from localStorage
         let victors = JSON.parse(localStorage.getItem('victors')) || [];
@@ -140,7 +142,7 @@
         // Step 1: Check decrypted message
         document.getElementById('abyssForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            const message = document.getElementById('message').value.trim().toUpperCase();
+            const message = document.getElementById('message').value.trim();
             if (message === correctMessage) {
                 document.getElementById('abyssForm').style.display = 'none';
                 document.getElementById('keyForm').style.display = 'block';
