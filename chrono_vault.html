@@ -85,14 +85,14 @@
     </style>
 </head>
 <body>
-    <h 1>India_0528: The Chrono Vault</h1>
+    <h1>India_0528: The Chrono Vault</h1>
     <div class="container">
         <p>The vault is locked in time, its secrets bound to a moment in the continuum.</p>
         <p>Decode the temporal key to access the next chamber:</p>
         <div class="timestamp">
-            1746057600
+            1758182400
         </div>
-        <p class="hint">Hint: From the Unix epoch, shift forward by the seconds elapsed to May 1, 2025, 00:00:00 UTC, then add 28 hours. Format as YYYY-MM-DD-HH (24-hour UTC).</p>
+        <p class="hint">Hint: From the Unix epoch, shift forward by the seconds elapsed to September 1, 2025, 00:00:00 UTC, then add 17 days and 8 hours. Format as YYYY-MM-DD-HH (24-hour UTC).</p>
         <p class="hint-warning">Dost thou seek a whisper from the void? Five points shall fade. To Farro’s ear, thy plea must wade.</p>
         <button id="hintButton">Request Hint (-5 points)</button>
         <form id="chronoForm">
@@ -112,12 +112,12 @@
         document.getElementById('chronoForm').addEventListener('submit', function(e) {
             e.preventDefault();
             const answer = document.getElementById('key').value.trim();
-            if (answer === "2025-05-02-04") {
+            if (answer === "2025-09-18-08") {
                 window.location.href = "shadow_cipher.html";
             } else {
                 alert("Incorrect. Adjust the timestamp and format it correctly.");
             }
         });
     </script>
-<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92a65125999dbd5e',t:'MTc0MzY1OTcyNS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'92c71a0b9a12bd34',t:'MTc0NDAwMzQ5OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
